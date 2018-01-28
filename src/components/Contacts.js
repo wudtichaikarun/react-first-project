@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-const ContactsComponent = ({ contacts }) => (
+const Contacts = ({ contacts }) => (
   <ul>
     {
       contacts.map(
@@ -11,4 +11,4 @@ const ContactsComponent = ({ contacts }) => (
   </ul>
 )
 
-export default ContactsComponent
+export default Contacts
