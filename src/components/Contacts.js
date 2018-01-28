@@ -11,4 +11,8 @@ const Contacts = ({ contacts }) => (
   </ul>
 )
 
+Contacts.defaultProps = {
+  contacts:[]
+}
+
 export default Contacts
