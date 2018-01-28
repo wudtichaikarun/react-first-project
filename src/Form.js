@@ -8,10 +8,16 @@ class FormComponent extends Component {
   createContact = (e) => {
     e.preventDefault()
   
-    console.log(this.addressInput.value, this.nameInput.value)
+    console.log(this.state)
   }
 
+  changeState = state => e => (
+    this.setState({ [state]: e.target.value })
+  )
+
+
  render() {
+   const { name, address } = this.state
    return (
      <div>
       <h2>Address Form</h2>
@@ -22,7 +28,8 @@ class FormComponent extends Component {
           type="text" 
           className="form-control" 
           id="name"
-          ref={input => this.nameInput = input} />
+          value={name} 
+          onChange={this.changeState('name')}/>
         </div>
         <div className="form-group">
           <label htmlFor="address">Address</label>
@@ -30,7 +37,8 @@ class FormComponent extends Component {
           type="text" 
           className="form-control" 
           id="address"
-          ref={input => this.addressInput = input} />
+          value={address} 
+          onChange={this.changeState('address')}/>
         </div>
         <button 
           type="submit" 
