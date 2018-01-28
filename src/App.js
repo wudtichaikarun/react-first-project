@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Form createContact={this.createContact}/> 
+        <Form onSubmit={this.createContact}/> 
         <hr />
         <Contacts {...this.state} />
       </div>
