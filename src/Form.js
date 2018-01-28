@@ -7,14 +7,24 @@ class FormComponent extends Component {
   }
   createContact = (e) => {
     e.preventDefault()
-  
-    console.log(this.state)
+    
+    const { name, address } = this.state
+    // createContact set from App.js
+    this.props.createContact({
+      name,
+      address
+    })
+
+    this.clearForm()
   }
 
   changeState = state => e => (
     this.setState({ [state]: e.target.value })
   )
 
+  clearForm = () => {
+    this.setState({ name: '', address: '' })
+  }
 
  render() {
    const { name, address } = this.state
