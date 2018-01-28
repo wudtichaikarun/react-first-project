@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Contacts = ({ contacts }) => (
   <ul>
@@ -12,7 +13,16 @@ const Contacts = ({ contacts }) => (
 )
 
 Contacts.defaultProps = {
-  contacts:[]
+  contacts: []
+}
+
+Contacts.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      address: PropTypes.string.isRequired
+    })
+  ) 
 }
 
 export default Contacts
